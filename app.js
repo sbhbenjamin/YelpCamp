@@ -22,7 +22,10 @@ var commentRoutes      = require("./routes/comments"),
 	campgroundRoutes   = require("./routes/campgrounds"),
 	indexRoutes        = require("./routes/index")
 
-mongoose.connect(process.env.DATABASEURL, {
+// set default url
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp_v10"
+
+mongoose.connect(url, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useUnifiedTopology: true
@@ -31,8 +34,6 @@ mongoose.connect(process.env.DATABASEURL, {
 }).catch(err => {
 	console.log("ERROR: ", err.message);
 });
-
-// mongodb+srv://sbhbenjamin:Spyderseven@cluster0-sypth.mongodb.net/test?retryWrites=true&w=majority
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs")
