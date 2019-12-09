@@ -20,9 +20,14 @@ var commentRoutes      = require("./routes/comments"),
 	campgroundRoutes   = require("./routes/campgrounds"),
 	indexRoutes        = require("./routes/index")
 
-// mongoose.connect("mongodb://localhost:27017/yelp_camp_v10", {
+// local database
+// mongoose.connect("process.env.DATABASEURL", {
 // useUnifiedTopology: true,
 // useNewUrlParser: true,
+// }).then(() => {
+// 	console.log("Connected to DB!");
+// }).catch(err => {
+// 	console.log("ERROR: ", err.message);
 // });
 
 mongoose.connect("mongodb+srv://sbhbenjamin:Spyderseven@cluster0-sypth.mongodb.net/test?retryWrites=true&w=majority",{
@@ -34,6 +39,7 @@ mongoose.connect("mongodb+srv://sbhbenjamin:Spyderseven@cluster0-sypth.mongodb.n
 }).catch(err => {
 	console.log("ERROR: ", err.message);
 });
+process.env.databaseURL
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs")
