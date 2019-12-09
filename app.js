@@ -13,6 +13,8 @@ var express 	  = require("express"),
 	User          = require("./models/user"),
 	seedDB        = require("./seeds");
 
+const PORT = process.env.PORT || 3000;
+
 app.locals.moment = require("moment");
 
 // requiring routes
@@ -63,4 +65,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT || 3000);
+app.listen(PORT, function(){
+	console.log(`Server is listening on port ${PORT}`)
+});
