@@ -22,8 +22,9 @@ var commentRoutes      = require("./routes/comments"),
 
 
 mongoose.connect("process.env.DATABASEURL", {
-useUnifiedTopology: true,
-useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useNewUrlParser: true,
+	useCreateIndex: true
 }).then(() => {
 	console.log("Connected to DB!");
 }).catch(err => {
