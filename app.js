@@ -20,26 +20,26 @@ var commentRoutes      = require("./routes/comments"),
 	campgroundRoutes   = require("./routes/campgrounds"),
 	indexRoutes        = require("./routes/index")
 
-// local database
-// mongoose.connect("process.env.DATABASEURL", {
-// useUnifiedTopology: true,
-// useNewUrlParser: true,
+
+mongoose.connect("process.env.DATABASEURL", {
+useUnifiedTopology: true,
+useNewUrlParser: true,
+}).then(() => {
+	console.log("Connected to DB!");
+}).catch(err => {
+	console.log("ERROR: ", err.message);
+});
+
+// mongoose.connect("mongodb+srv://sbhbenjamin:Spyderseven@cluster0-sypth.mongodb.net/test?retryWrites=true&w=majority",{
+// 	useNewUrlParser: true,
+// 	useCreateIndex: true,
+// 	useUnifiedTopology: true
 // }).then(() => {
 // 	console.log("Connected to DB!");
 // }).catch(err => {
 // 	console.log("ERROR: ", err.message);
 // });
 
-mongoose.connect("mongodb+srv://sbhbenjamin:Spyderseven@cluster0-sypth.mongodb.net/test?retryWrites=true&w=majority",{
-	useNewUrlParser: true,
-	useCreateIndex: true,
-	useUnifiedTopology: true
-}).then(() => {
-	console.log("Connected to DB!");
-}).catch(err => {
-	console.log("ERROR: ", err.message);
-});
-process.env.databaseURL
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs")
