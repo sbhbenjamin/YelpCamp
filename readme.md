@@ -169,6 +169,8 @@ A Seeds file grants us some sample data for testing of functionalities
 - Hide/Show edit and delete buttons
 - Refactor Middleware
 
+## 7. Polishing
+
 ### Adding in Flash
 
 - Install and configure connect-flash
@@ -191,3 +193,19 @@ A Seeds file grants us some sample data for testing of functionalities
 ### Dynamic pricing
 
 - Altering the show page and edit/new forms, campgrounds route and campgrounds model
+
+### Google Maps API
+
+- Get Google Maps API Key
+- Restrict Google Maps API Key
+- Enable Geocoding API
+- Get another key for Geocoding API
+- Add to application as ENV variable
+- Add Google Maps scripts to application
+
+- Display the campground location in show.ejs
+- Update campground model
+- Update new and edit forms
+
+- Add location input field
+- Update campground routes
