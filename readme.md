@@ -46,8 +46,6 @@
 
 ### Show Page
 
-[RESTFUL ROUTES](https://www.notion.so/a572d59040d241c183e893e5efb5d77f)
-
 - Add the description to our campground model
 - Show db.collection.drop()
 - Add a show route/template
@@ -75,11 +73,7 @@ A Seeds file grants us some sample data for testing of functionalities
 ### Comment New / Create
 
 - Nested Routes
-
     The comment route should not exist standalone (i.e. comments/new) as they depend on the campground and the particular id. As such, we have to nest the comments within the campgrounds path:
-
-    [NEW AND GET COMMENT ROUTES](https://www.notion.so/0a41afbc46594cee8e0e8ae0f9f29203)
-
 - Moved EJS files to campground and comment directories, and updated partials to reflect correct directory
 - Add the comment new and create routes
 - Add the new comment form
